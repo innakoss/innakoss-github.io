@@ -1,0 +1,105 @@
+ .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero, .top-news, .scores, .weather, .recent-news {
+  order: 10;
+}
+
+@media screen and (min-width: 550px) {
+  .hero {
+    width: 60%;
+    order: 0;
+  }
+  .weather {
+    width: 40%;
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .hero {
+    width: 50%;
+    order: 0;
+  }
+  .top-news {
+    width: 50%;
+    order: 1;
+  }
+  .scores {
+    width: 60%;
+    order: 2;
+  }
+  .weather {
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  main, .header__inner, .nav, .content {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+ /*
+ *
+ * Responsive table 
+ *
+ */
+
+ @media screen and (max-width: 400px) {
+  .scores__table {
+    padding: 5px;
+  }
+
+  table.scores__table , .scores__table thead, .scores__table tbody, .scores__table th, .scores__table tr, .scores__table td {
+    display: block;
+    min-width: 100px;
+    box-sizing: border-box;
+  }
+
+  /* hide header */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* hide table cells */
+  .scores__table td {
+    position: relative;
+    padding-left: 50%;
+    display: none;
+  }
+
+  .scores__table td[data-th].winner__header {
+    color: #fff;
+    font-weight: 300;
+    background-color: #78909C;
+    display: block;
+  }
+  
+  /* show only winners */
+  .scores__table td[data-th].winner {
+    display: block;
+    text-align: inherit;
+  }
+
+  /* add lables */
+  td:before { 
+    position: absolute;
+    left: 6px;
+    content: attr(data-th);
+  }
+  
+}
+  
+  /*
+ *
+ * Responsive table 
+ *
+ */
