@@ -1,10 +1,82 @@
- .content {
+.content {
   display: flex;
   flex-wrap: wrap;
 }
 
+.header__menu {
+  display: none;
+}
+
 .hero, .top-news, .scores, .weather, .recent-news {
   order: 10;
+}
+
+/*
+*
+* Off-canvas layout styles.
+* 
+*/
+
+@media screen and (max-width: 400px) {
+  .header__inner {
+    display: flex;
+  }
+  .header__logo {
+    flex-grow: 1;
+    height: 49px;
+    margin-right: 0;
+    margin-top: 0;
+    padding-top: 0.5em;
+  }
+  .header__title {
+    flex-grow: 1;
+    font-size: 2em;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0.5em 0.25em;
+  }
+  .header__menu {
+    flex-grow: 1;
+    right: 0;
+    padding: 1em 0.5em;
+    display: inline-block;
+    color: #c0c4c7;
+  }
+  .nav {
+    width: 300px;
+    background-color: #c0c4c7;
+    margin-left: 0;
+    margin-right: 0;
+    position: absolute;
+    z-index: 10;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+  .nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .nav__item {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    text-align: left;
+    line-height: 24px;
+    padding: 24px 24px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fffafa;
+  }
+  .nav a {
+    text-decoration: none;
+    color: #fffafa;
+  }
+  .nav a:hover {
+    text-decoration: underline;
+    color: #212121;
+  }
 }
 
 @media screen and (min-width: 550px) {
@@ -97,9 +169,3 @@
   }
   
 }
-  
-  /*
- *
- * Responsive table 
- *
- */
