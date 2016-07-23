@@ -13,7 +13,7 @@
 
 /*
 *
-* Off-canvas layout styles.
+* Off-canvas layout styles
 * 
 */
 
@@ -78,6 +78,19 @@
     color: #212121;
   }
 }
+
+ /*
+ *
+ * Minor break point 
+ *
+ */
+
+
+ /*
+ *
+ * Layout shifter 
+ *
+ */
 
 @media screen and (min-width: 550px) {
   .hero {
@@ -169,3 +182,48 @@
   }
   
 }
+
+@media screen and (max-width: 399px) {
+	html {
+	  font-size: 10px;
+	}
+	body {
+	  font-size: 1em;
+	}
+	header, .nav__item {
+	  font-size: 1.3em;
+	}
+	.hero {
+		height: 350px;
+	}
+	.hero article {
+		height: 50%;
+	}
+	h2 {
+		font-size: 1.8em;
+	}
+	p {
+		font-size: 1.6em;
+	}
+	.description p, .recent-news p {
+		line-height: 1.5;
+	}
+	.news__title {
+		font-size: 2em;
+	}
+	.top-news {
+		height: 320px;
+	}
+	.top-news__item {
+		font-size: 1.6em;
+	}
+	.scores {
+		font-size: 1.6em;
+	}
+	.weather {
+		font-size: 1.6em;
+	}
+	.snippet__title {
+		font-size: 1.3em;
+	}
+ }
